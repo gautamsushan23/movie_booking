@@ -27,10 +27,10 @@ function bookTicket(movieName, date, time) {
         return;
     }
 
-    let bookingID = Math.random().toString(36).substr(2, 9);
+    let bookingID = Math.random().toString(36).substr(2, 9); // Generate Booking ID
     let ticketData = `Movie: ${movieName}\nName: ${name}\nDate: ${date}\nTime: ${time}\nBooking ID: ${bookingID}`;
 
-    // Generate QR Code
+    // Generate QR Code with Booking ID
     document.getElementById("qrcode").innerHTML = ""; 
     new QRCode(document.getElementById("qrcode"), {
         text: ticketData,
@@ -44,9 +44,10 @@ function bookTicket(movieName, date, time) {
         <p><strong>Date:</strong> ${date}</p>
         <p><strong>Time:</strong> ${time}</p>
         <p><strong>Booked by:</strong> ${name}</p>
+        <p><strong>Booking ID:</strong> ${bookingID}</p> <!-- Display Booking ID -->
     `;
 
-    // Show QR Code Section
+    // Show QR Code Section and Scroll to It
     document.getElementById("qrcode-container").style.display = "flex";
     document.getElementById("qrcode-container").scrollIntoView({ behavior: "smooth" });
 
