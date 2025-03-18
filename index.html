@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Movie Ticket Booking</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Online Movie Ticket Booking</h1>
+
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        <div id="qrcode-container" style="display: none;">
+            <h2 id="qr-heading">Your Ticket QR Code:</h2>
+            <div id="qrcode"></div>
+            <div id="qr-details"></div> 
+        </div>
+
+        <h2>Select a Movie:</h2>
+        <div class="movie-list">
+            <!-- Movie 1: Purna Bahadur Ko Sarangi -->
+            <div class="movie">
+                <img src="./pictures/Purna_Bahadur_Ko_Sarangi.jpg" alt="Purna Bahadur Ko Sarangi">
+                <p><strong>Purna Bahadur Ko Sarangi</strong></p>
+                <p>A heart-touching story about a musician’s struggle and legacy.</p>
+                <p><strong>Date:</strong> March 20, 2025</p>
+                <p><strong>Time:</strong> 7:00 PM</p>
+                <button onclick="bookTicket('Purna Bahadur Ko Sarangi', 'March 20, 2025', '7:00 PM')">Book Now</button>
+            </div>
+            
+            <!-- Movie 2: Anjila -->
+            <div class="movie">
+                <img src="./pictures/anjila.jpg" alt="Anjila">
+                <p><strong>Anjila</strong></p>
+                <p>An emotional journey of love, loss, and self-discovery.</p>
+                <p><strong>Date:</strong> March 21, 2025</p>
+                <p><strong>Time:</strong> 6:30 PM</p>
+                <button onclick="bookTicket('Anjila', 'March 21, 2025', '6:30 PM')">Book Now</button>
+            </div>
+            
+            <!-- Movie 3: Laj Saranam -->
+            <div class="movie">
+                <img src="./pictures/laaj_saranam.jpg" alt="Laj Saranam">
+                <p><strong>Laj Saranam</strong></p>
+                <p>A thrilling drama about honor, betrayal, and justice.</p>
+                <p><strong>Date:</strong> March 22, 2025</p>
+                <p><strong>Time:</strong> 8:00 PM</p>
+                <button onclick="bookTicket('Laj Saranam', 'March 22, 2025', '8:00 PM')">Book Now</button>
+            </div>
+        </div>
+
+        <div id="qrcode-container" style="display: none;">
+            <h2 id="qr-heading">Your Ticket QR Code:</h2>
+            <div id="qrcode"></div>
+            <div id="qr-details"></div> 
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 700px; /* Increased width to fit movies in a row */
+    margin: 50px auto;
+    background: white;
+    padding: 25px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Header */
+h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Input Field */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+/* Movie List Styling */
+.movie-list {
+    display: flex;
+    justify-content: center; /* Centers the movies */
+    gap: 20px; /* Spacing between movies */
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+/* Movie Card */
+.movie {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    flex-basis: 30%; /* Ensures equal width */
+    min-width: 250px; /* Prevents small sizing */
+}
+
+.movie img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.movie:hover {
+    transform: scale(1.05);
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+
+/* QR Code Section */
+/* Center the QR Code and details */
+#qrcode-container {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#qrcode {
+    margin: 15px auto;
+}
+
+/* Style for movie details below QR */
+#qr-details {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .movie-list {
+        flex-direction: column; /* Stack movies on smaller screens */
+    }
+    .movie {
+        width: 80%;
+    }
+}
