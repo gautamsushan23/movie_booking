@@ -21,6 +21,12 @@ function bookTicket(movieName, date, time) {
         return;
     }
 
+    // Show confirmation dialog
+    let isConfirmed = confirm(`Are you sure you want to book a ticket for:\nMovie: ${movieName}\nDate: ${date}\nTime: ${time}?`);
+    if (!isConfirmed) {
+        return;
+    }
+
     let bookingID = Math.random().toString(36).substr(2, 9);
     let ticketData = `Movie: ${movieName}\nName: ${name}\nDate: ${date}\nTime: ${time}\nBooking ID: ${bookingID}`;
 
@@ -41,6 +47,6 @@ function bookTicket(movieName, date, time) {
     `;
 
     document.getElementById("qrcode-container").style.display = "flex";
-
+ 
     document.getElementById("qrcode-container").scrollIntoView({ behavior: "smooth" });
 }
