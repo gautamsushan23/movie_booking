@@ -30,7 +30,7 @@ function bookTicket(movieName, date, time) {
     let bookingID = Math.random().toString(36).substr(2, 9);
     let ticketData = `Movie: ${movieName}\nName: ${name}\nDate: ${date}\nTime: ${time}\nBooking ID: ${bookingID}`;
 
-    // Clear previous QR code
+    // Generate QR Code
     document.getElementById("qrcode").innerHTML = ""; 
     new QRCode(document.getElementById("qrcode"), {
         text: ticketData,
@@ -46,7 +46,28 @@ function bookTicket(movieName, date, time) {
         <p><strong>Booked by:</strong> ${name}</p>
     `;
 
+    // Show QR Code Section
     document.getElementById("qrcode-container").style.display = "flex";
- 
     document.getElementById("qrcode-container").scrollIntoView({ behavior: "smooth" });
+
+    // Send booking data to Formspree
+    fetch("https://formspree.io/f/xyzezlzp", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            movie: movieName,
+            name: name,
+            date: date,
+            time: time,
+            bookingID: bookingID
+        })
+    }).then(response => {
+        if (response.ok) {
+            alert("Your booking details have been successfully stored!");
+        } else {
+            alert("Failed to store booking details.");
+        }
+    }).catch(error => console.error("Error:", error));
 }
