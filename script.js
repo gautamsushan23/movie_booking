@@ -40,8 +40,7 @@ function bookTicket(movieName, date, time) {
         <p><strong>Booked by:</strong> ${name}</p>
     `;
 
-    // Show QR Code Section
     document.getElementById("qrcode-container").style.display = "flex";
+
+    document.getElementById("qrcode-container").scrollIntoView({ behavior: "smooth" });
 }
-
-
